@@ -4,9 +4,7 @@ import "./App.css";
 import useYoTest from "../src/yo-test";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const YoTest = useYoTest({ accessId: "TODO" });
+  const YoTest = useYoTest({ accessId: "TODO", product: "popup" });
 
   return <div className="App">{YoTest.ui}</div>;
 }

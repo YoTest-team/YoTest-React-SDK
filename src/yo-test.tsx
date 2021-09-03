@@ -9,7 +9,7 @@ export default function useYoTest(props: {
   /** required */
   accessId: string;
   /** defaults to 'float' */
-  product?: string;
+  product?: "bind" | "float" | "popup" | "custom";
   area?: string;
   bgColor?: string;
   enforced?: boolean;
@@ -23,12 +23,6 @@ export default function useYoTest(props: {
 }) {
   let $captcha = useRef(null as Captcha);
   let mountTarget = useRef<HTMLDivElement>(null);
-
-  let data = () => {
-    return {
-      $captcha: null,
-    };
-  };
 
   let onLoadedHandler = (captcha: Captcha) => {
     if (!captcha) {
@@ -82,25 +76,24 @@ export default function useYoTest(props: {
   let ui = <div ref={mountTarget} className="yotest" style={{ width: 300, height: 40, ...props.style }}></div>;
 
   return {
+    /** virtual DOM for rendering */
     ui: ui,
     render: () => ui,
+
+    /** TODO get internal object of captcha, */
+    getCaptchaObject: () => {
+      return {
+        $captcha: null,
+      };
+    },
     getValidate: () => {
-      if (!$captcha.current) {
-        return;
-      }
-      return $captcha.current.getValidate();
+      return $captcha.current?.getValidate();
     },
     reset: () => {
-      if (!$captcha.current) {
-        return;
-      }
-      return $captcha.current.reset();
+      return $captcha.current?.reset();
     },
     verify: () => {
-      if (!$captcha.current) {
-        return;
-      }
-      return $captcha.current.verify();
+      return $captcha.current?.verify();
     },
   };
 }
