@@ -188,7 +188,7 @@ export default function App() {
   - [**onError** \<({ code:Number, message:String }) => void\>](https://github.com/YoTest-team/YoTest-React-SDK#onerror-codenumber-messagestring---void)
   - [**onClose** \<() => void\>](https://github.com/YoTest-team/YoTest-React-SDK#onclose--void)
 - `return:`
-  - [**render** \<() => React.component\>](https://github.com/YoTest-team/YoTest-React-SDK#rende--reactcomponent)
+  - [**render** \<() => React.component\>](https://github.com/YoTest-team/YoTest-React-SDK#render--reactcomponent)
   - [**getValidate** \<() => ValidateResult | void\>](https://github.com/YoTest-team/YoTest-React-SDK#getvalidate--validateresult--void)
   - [**reset** \<() => void\>](https://github.com/YoTest-team/YoTest-React-SDK#reset--void)
   - [**verify** \<() => void\>](https://github.com/YoTest-team/YoTest-React-SDK#verify--void)
