@@ -33,7 +33,7 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha } = useYoTest({
+  const { render } = useYoTest({
     accessId: "your accessId",
     style: {
       width: 300,
@@ -47,7 +47,7 @@ export default function App() {
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
 }
 ```
 
@@ -62,7 +62,7 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha } = useYoTest({
+  const { render } = useYoTest({
     accessId: "your accessId",
     product: "float",
     style: {
@@ -77,7 +77,7 @@ export default function App() {
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
 }
 ```
 
@@ -90,7 +90,7 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha } = useYoTest({
+  const { render } = useYoTest({
     accessId: "your accessId",
     product: "popup",
     style: {
@@ -105,7 +105,7 @@ export default function App() {
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
 }
 ```
 
@@ -118,7 +118,7 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha, verify } = useYoTest({
+  const { render, verify } = useYoTest({
     accessId: "your accessId",
     product: "bind",
     style: {
@@ -138,7 +138,7 @@ export default function App() {
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
 }
 ```
 
@@ -151,7 +151,7 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha } = useYoTest({
+  const { render } = useYoTest({
     accessId: "your accessId",
     product: "custom",
     area: ".App",
@@ -168,7 +168,7 @@ export default function App() {
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
 }
 ```
 
@@ -188,7 +188,7 @@ export default function App() {
   - [**onError** \<({ code:Number, message:String }) => void\>](https://github.com/YoTest-team/YoTest-React-SDK#onerror-codenumber-messagestring---void)
   - [**onClose** \<() => void\>](https://github.com/YoTest-team/YoTest-React-SDK#onclose--void)
 - `return:`
-  - **captcha** \<React.component\> 优验的 UI DOM，需要放入其他的 React 组件之中
+  - [**render** \<() => React.component\>](https://github.com/YoTest-team/YoTest-React-SDK#rende--reactcomponent)
   - [**getValidate** \<() => ValidateResult | void\>](https://github.com/YoTest-team/YoTest-React-SDK#getvalidate--validateresult--void)
   - [**reset** \<() => void\>](https://github.com/YoTest-team/YoTest-React-SDK#reset--void)
   - [**verify** \<() => void\>](https://github.com/YoTest-team/YoTest-React-SDK#verify--void)
@@ -204,14 +204,14 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha } = useYoTest({
+  const { render } = useYoTest({
     accessId: "your accessId",
     onReady() {
       console.log("yotest init completed...");
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
 }
 ```
 
@@ -229,14 +229,14 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha } = useYoTest({
+  const { render } = useYoTest({
     accessId: "your accessId",
     onSuccess({ token, verified }) {
       console.log("success", token, verified);
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
 }
 ```
 
@@ -254,14 +254,14 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha } = useYoTest({
+  const { render } = useYoTest({
     accessId: "your accessId",
     onError({ code, message }) {
       console.log("error", code, message);
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
 }
 ```
 
@@ -276,14 +276,33 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha } = useYoTest({
+  const { render } = useYoTest({
     accessId: "your accessId",
     onClose() {
       console.log("captcha close");
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
+}
+```
+
+### render() => React.component
+
+- `return:` \<React.component\>
+
+返回优验的UI DOM。
+
+```typescript
+import React from "react";
+import useYoTest from "yotest-react-sdk";
+
+export default function App() {
+  const { render } = useYoTest({
+    accessId: "your accessId",
+  });
+
+  return <div className="App">{render()}</div>;
 }
 ```
 
@@ -300,7 +319,7 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha, getValidate } = useYoTest({
+  const { render, getValidate } = useYoTest({
     accessId: "your accessId",
     onClose() {
       const { token, verified } = getValidate();
@@ -310,7 +329,7 @@ export default function App() {
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
 }
 ```
 
@@ -325,7 +344,7 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha, reset } = useYoTest({
+  const { render, reset } = useYoTest({
     accessId: "your accessId",
     onError({ code, message }) {
       if(code === -1){
@@ -334,7 +353,7 @@ export default function App() {
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
 }
 ```
 
@@ -348,7 +367,7 @@ import React from "react";
 import useYoTest from "yotest-react-sdk";
 
 export default function App() {
-  const { captcha, verify } = useYoTest({
+  const { render, verify } = useYoTest({
     accessId: "your accessId",
     product: "bind",
     style: {
@@ -362,6 +381,6 @@ export default function App() {
     },
   });
 
-  return <div className="App">{captcha}</div>;
+  return <div className="App">{render()}</div>;
 }
 ```

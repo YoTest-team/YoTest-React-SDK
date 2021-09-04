@@ -61,7 +61,7 @@ export default function useYoTest(props: {
 
   const captcha = <div ref={mountTarget} className="yotest" style={{ width: 300, height: 40, ...props.style }}></div>;
   return {
-    captcha,
+    render: () => captcha,
     getValidate: () => $captcha.current?.getValidate(),
     reset: () => $captcha.current?.reset(),
     verify: () => $captcha.current?.verify(),
