@@ -1,7 +1,7 @@
+index.html
 node_modules
-.DS_Store
+.cache
 dist
-dist-ssr
-*.local
-
-/lib/
+example
+vite.config.ts
+tsconfig.json

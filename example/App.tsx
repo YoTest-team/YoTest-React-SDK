@@ -1,12 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
+import useYoTest from "../YoTest";
 import "./App.css";
 
-import useYoTest from "../src/yo-test";
-
 function App() {
-  const YoTest = useYoTest({ accessId: "TODO", product: "popup" });
+  const { captcha } = useYoTest({
+    accessId: "TODO",
+    product: "custom",
+    area: ".App",
+    bgColor: "red",
+    style: {
+      width: 300,
+      height: 40,
+    },
+    onSuccess({ token, verified }) {
+      console.log("success", token, verified);
+    },
+    onError({ code, message }) {
+      console.log("error", code, message);
+    },
+  });
 
-  return <div className="App">{YoTest.ui}</div>;
+  return <div className="App">{captcha}</div>;
 }
 
 export default App;

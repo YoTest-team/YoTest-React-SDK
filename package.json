@@ -1,12 +1,21 @@
 {
-  "name": "my-vue-app",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "compile": "tsc -d --project tsconfig.json --outDir lib/",
-    "build": "tsc && vite build",
-    "serve": "vite preview"
+  "name": "yotest-react-sdk",
+  "version": "1.0.0",
+  "description": "YoTest React SDK",
+  "main": "YoTest.tsx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YoTest-team/YoTest-React-SDK.git"
   },
+  "scripts": {
+    "dev": "vite"
+  },
+  "author": "yotest-team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YoTest-team/YoTest-React-SDK/issues"
+  },
+  "homepage": "https://github.com/YoTest-team/YoTest-React-SDK#readme",
   "dependencies": {
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
