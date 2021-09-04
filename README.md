@@ -2,7 +2,7 @@
 
 <a href="https://www.npmjs.com/package/yotest-react-sdk"><img src="https://img.shields.io/npm/v/yotest-react-sdk.svg?sanitize=true" alt="Version"></a>
 
-> 基于设备特征识别和操作行为识别的新一代智能验证码，具备智能评分、抗 Headless、模拟伪装、针对恶意设备自动提升验证难度等多项安全措施，帮助开发者减少恶意攻击导致的数字资产损失，强力护航业务安全。
+> 基于虚拟机保护、设备特征识别和操作行为识别的新一代智能验证码，具备智能评分、抗 Headless、模拟伪装、针对恶意设备自动提升验证难度等多项安全措施，帮助开发者减少恶意攻击导致的数字资产损失，强力护航业务安全。
 
 - [仓库入口](https://github.com/YoTest-team/YoTest-React-SDK#%E4%BB%93%E5%BA%93%E5%85%A5%E5%8F%A3)
 - [兼容性](https://github.com/YoTest-team/YoTest-React-SDK#%E5%85%BC%E5%AE%B9%E6%80%A7)
