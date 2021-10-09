@@ -12,6 +12,7 @@ export default function useYoTest(props: {
   style?: CSSProperties;
 
   onReady?: () => void;
+  onShow?: () => void;
   onSuccess?: (data: ValidateResult) => void;
   onError?: (data: ValidateError) => void;
   onClose?: () => void;
@@ -26,6 +27,7 @@ export default function useYoTest(props: {
 
     $captcha.current = captcha;
     captcha.onReady(() => props.onReady?.());
+    captcha.onShow(() => props.onShow?.());
     captcha.onSuccess((data: ValidateResult) => props.onSuccess?.(data));
     captcha.onError((data: ValidateError) => props.onError?.(data));
     captcha.onClose(() => props.onClose?.());
