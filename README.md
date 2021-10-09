@@ -184,6 +184,7 @@ export default function App() {
   - **enforced** \<String\> 可选，默认值 false，强制每一次都进行验证，取消无感验证
   - **style** \<CSSProperties\> 可选，自定义的 CSS 样式
   - [**onReady** \<() => void\>](https://github.com/YoTest-team/YoTest-React-SDK#onready--void)
+  - [**onShow** \<() => void\>](https://github.com/YoTest-team/YoTest-React-SDK#onshow--void)
   - [**onSuccess** \<({ token:String, verified:Boolean }) => void\>](https://github.com/YoTest-team/YoTest-React-SDK#onsuccess-tokenstring-verifiedboolean---void)
   - [**onError** \<({ code:Number, message:String }) => void\>](https://github.com/YoTest-team/YoTest-React-SDK#onerror-codenumber-messagestring---void)
   - [**onClose** \<() => void\>](https://github.com/YoTest-team/YoTest-React-SDK#onclose--void)
@@ -208,6 +209,28 @@ export default function App() {
     accessId: "your accessId",
     onReady() {
       console.log("yotest init completed...");
+    },
+  });
+
+  return <div className="App">{render()}</div>;
+}
+```
+
+### onShow() => void
+
+- `return:` void
+
+验证框展现的回调。
+
+```typescript
+import React from "react";
+import useYoTest from "yotest-react-sdk";
+
+export default function App() {
+  const { render } = useYoTest({
+    accessId: "your accessId",
+    onShow() {
+      console.log("yotest showed...");
     },
   });
 
